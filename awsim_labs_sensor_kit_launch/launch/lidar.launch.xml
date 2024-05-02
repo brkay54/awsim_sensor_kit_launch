@@ -3,6 +3,7 @@
   <arg name="vehicle_mirror_param_file"/>
   <arg name="pointcloud_container_name" default="pointcloud_container"/>
   <arg name="use_distortion_corrector" default="true"/>
+  <arg name="separate_concatenate_node_and_time_sync_node" default="false"/>
 
   <group>
     <push-ros-namespace namespace="lidar"/>
@@ -38,6 +39,7 @@
       <arg name="base_frame" value="base_link"/>
       <arg name="use_intra_process" value="true"/>
       <arg name="use_multithread" value="true"/>
+      <arg name="separate_concatenate_node_and_time_sync_node" value="$(var separate_concatenate_node_and_time_sync_node)"/>
       <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
     </include>
   </group>

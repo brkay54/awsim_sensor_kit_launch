@@ -3,7 +3,8 @@
   <!-- <arg name="launch_driver" default="true" description="do launch driver"/> -->
   <arg name="vehicle_mirror_param_file" description="path to the file of vehicle mirror position yaml"/>
   <arg name="pointcloud_container_name" default="pointcloud_container"/>
-  <arg name="use_distortion_corrector" default="false" description="compensate the point cloud distortion caused by vehicle movement"/>
+  <arg name="use_distortion_corrector" default="true" description="compensate the point cloud distortion caused by vehicle movement"/>
+  <arg name="separate_concatenate_node_and_time_sync_node" default="true" description="Set True to separate concatenate node and time_sync node. which will cause to larger memory usage."/>
 
   <group>
     <!-- LiDAR Driver -->
@@ -11,6 +12,7 @@
       <arg name="vehicle_mirror_param_file" value="$(var vehicle_mirror_param_file)"/>
       <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
       <arg name="use_distortion_corrector" value="$(var use_distortion_corrector)"/>
+      <arg name="separate_concatenate_node_and_time_sync_node" value="$(var separate_concatenate_node_and_time_sync_node)"/>
     </include>
 
     <!-- Camera Driver -->
